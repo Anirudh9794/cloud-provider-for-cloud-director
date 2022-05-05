@@ -3,9 +3,9 @@ package vcdcpiclient
 import (
 	"context"
 	"fmt"
-	"github.com/vmware/cloud-provider-for-cloud-director/pkg/util"
-	"github.com/vmware/cloud-provider-for-cloud-director/pkg/vcdsdk"
-	swaggerClient "github.com/vmware/cloud-provider-for-cloud-director/pkg/vcdswaggerclient"
+	"github.com/Anirudh9794/cloud-provider-for-cloud-director/pkg/util"
+	"github.com/Anirudh9794/cloud-provider-for-cloud-director/pkg/vcdsdk"
+	swaggerClient "github.com/Anirudh9794/cloud-provider-for-cloud-director/pkg/vcdswaggerclient"
 	"k8s.io/klog"
 	"net/http"
 	"strings"

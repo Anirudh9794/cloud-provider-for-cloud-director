@@ -7,8 +7,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/vmware/cloud-provider-for-cloud-director/pkg/ccm"
-	"github.com/vmware/cloud-provider-for-cloud-director/version"
+	"github.com/Anirudh9794/cloud-provider-for-cloud-director/pkg/ccm"
+	"github.com/Anirudh9794/cloud-provider-for-cloud-director/version"
 	"k8s.io/apimachinery/pkg/util/wait"
 	"k8s.io/apiserver/pkg/server/healthz"
 	cloudprovider "k8s.io/cloud-provider"

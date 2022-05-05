@@ -8,7 +8,7 @@ package vcdsdk
 import (
 	"crypto/tls"
 	"fmt"
-	swaggerClient "github.com/vmware/cloud-provider-for-cloud-director/pkg/vcdswaggerclient"
+	swaggerClient "github.com/Anirudh9794/cloud-provider-for-cloud-director/pkg/vcdswaggerclient"
 	"github.com/vmware/go-vcloud-director/v2/govcd"
 	"k8s.io/klog"
 	"net/http"

@@ -6,8 +6,8 @@ package vcdcpiclient
 
 import (
 	"fmt"
-	"github.com/vmware/cloud-provider-for-cloud-director/pkg/config"
-	"github.com/vmware/cloud-provider-for-cloud-director/pkg/vcdsdk"
+	"github.com/Anirudh9794/cloud-provider-for-cloud-director/pkg/config"
+	"github.com/Anirudh9794/cloud-provider-for-cloud-director/pkg/vcdsdk"
 	"os"
 	"path/filepath"
 )

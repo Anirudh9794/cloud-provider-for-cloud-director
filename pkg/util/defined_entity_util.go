@@ -2,7 +2,7 @@ package util
 
 import (
 	"fmt"
-	swaggerClient "github.com/vmware/cloud-provider-for-cloud-director/pkg/vcdswaggerclient"
+	swaggerClient "github.com/Anirudh9794/cloud-provider-for-cloud-director/pkg/vcdswaggerclient"
 	"strings"
 )
 

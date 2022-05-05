@@ -7,7 +7,7 @@ package ccm
 
 import (
 	"fmt"
-	"github.com/vmware/cloud-provider-for-cloud-director/pkg/vcdsdk"
+	"github.com/Anirudh9794/cloud-provider-for-cloud-director/pkg/vcdsdk"
 	"k8s.io/klog"
 	"sync"
 	"time"

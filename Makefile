@@ -9,7 +9,7 @@ REGISTRY?="harbor-repo.vmware.com/vcloud"
 
 build-within-docker:
 	mkdir -p /build/cloud-provider-for-cloud-director
-	go build -ldflags "-X github.com/vmware/cloud-provider-for-cloud-director/version.Version=$(version)" -o /build/vcloud/cloud-provider-for-cloud-director cmd/ccm/main.go
+	go build -ldflags "-X github.com/Anirudh9794/cloud-provider-for-cloud-director/version.Version=$(version)" -o /build/vcloud/cloud-provider-for-cloud-director cmd/ccm/main.go
 
 ccm: $(GO_CODE)
 	docker build -f Dockerfile . -t cloud-provider-for-cloud-director:$(version).latest
@@ -21,8 +21,8 @@ ccm: $(GO_CODE)
 all: ccm
 
 test:
-	go test -tags testing -v github.com/vmware/cloud-provider-for-cloud-director/pkg/vcdclient -cover -count=1
-	go test -tags testing -v github.com/vmware/cloud-provider-for-cloud-director/pkg/config -cover -count=1
+	go test -tags testing -v github.com/Anirudh9794/cloud-provider-for-cloud-director/pkg/vcdclient -cover -count=1
+	go test -tags testing -v github.com/Anirudh9794/cloud-provider-for-cloud-director/pkg/config -cover -count=1
 
 integration-test: test
-	go test -tags="testing integration" -v github.com/vmware/cloud-provider-for-cloud-director/vcdclient -cover -count=1
+	go test -tags="testing integration" -v github.com/Anirudh9794/cloud-provider-for-cloud-director/vcdclient -cover -count=1

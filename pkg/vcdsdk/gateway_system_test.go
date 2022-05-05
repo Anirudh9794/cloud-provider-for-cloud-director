@@ -11,7 +11,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	swagger "github.com/vmware/cloud-provider-for-cloud-director/pkg/vcdswaggerclient"
+	swagger "github.com/Anirudh9794/cloud-provider-for-cloud-director/pkg/vcdswaggerclient"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"path/filepath"

@@ -7,7 +7,7 @@ package vcdsdk
 
 import (
 	"fmt"
-	"github.com/vmware/cloud-provider-for-cloud-director/pkg/config"
+	"github.com/Anirudh9794/cloud-provider-for-cloud-director/pkg/config"
 	"os"
 	"path/filepath"
 )

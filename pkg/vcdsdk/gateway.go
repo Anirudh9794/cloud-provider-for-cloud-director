@@ -10,10 +10,10 @@ package vcdsdk
 import (
 	"context"
 	"fmt"
+	swaggerClient "github.com/Anirudh9794/cloud-provider-for-cloud-director/pkg/vcdswaggerclient"
 	"github.com/antihax/optional"
 	"github.com/apparentlymart/go-cidr/cidr"
 	"github.com/peterhellberg/link"
-	swaggerClient "github.com/vmware/cloud-provider-for-cloud-director/pkg/vcdswaggerclient"
 	"github.com/vmware/go-vcloud-director/v2/govcd"
 	"github.com/vmware/go-vcloud-director/v2/types/v56"
 	"k8s.io/klog"

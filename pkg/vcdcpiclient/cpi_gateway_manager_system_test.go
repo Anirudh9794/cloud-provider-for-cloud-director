@@ -6,7 +6,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/vmware/cloud-provider-for-cloud-director/pkg/vcdsdk"
+	"github.com/Anirudh9794/cloud-provider-for-cloud-director/pkg/vcdsdk"
 	"io/ioutil"
 	"k8s.io/apimachinery/pkg/util/yaml"
 	"path/filepath"
