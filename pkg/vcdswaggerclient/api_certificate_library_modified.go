@@ -26,6 +26,10 @@ var (
 	_ context.Context
 )
 
+const (
+	TenantContextHeader = "X-VMWARE-VCLOUD-TENANT-CONTEXT"
+)
+
 type CertificateLibraryApiService service
 
 /*
@@ -627,7 +631,7 @@ func (a *CertificateLibraryApiService) QueryCertificateLibrary(ctx context.Conte
 
 	// if there is an orgID set, use the appropriate header
 	if orgID != "" {
-		localVarHeaderParams["X-VMWARE-VCLOUD-TENANT-CONTEXT"] = orgID
+		localVarHeaderParams[TenantContextHeader] = orgID
 	}
 
 	if ctx != nil {
