@@ -478,7 +478,7 @@ func (gatewayManager *GatewayManager) UpdateAppPortProfile(appPortProfileName st
 	}
 	appPortProfile, err := org.GetNsxtAppPortProfileByName(appPortProfileName, types.ApplicationPortProfileScopeTenant)
 	if err != nil {
-		return nil, fmt.Errorf("failed to get application port profile by name [%s]: [%v]", appPortProfileName, err)
+		return nil, govcd.ErrorEntityNotFound
 	}
 	if appPortProfile == nil || appPortProfile.NsxtAppPortProfile == nil || len(appPortProfile.NsxtAppPortProfile.ApplicationPorts) == 0 || len(appPortProfile.NsxtAppPortProfile.ApplicationPorts[0].DestinationPorts) == 0 {
 		return nil, fmt.Errorf("invalid app port profile [%s]", appPortProfileName)
@@ -1861,14 +1861,17 @@ func (gm *GatewayManager) UpdateLoadBalancer(ctx context.Context, lbPoolName str
 		dnatRuleName := GetDNATRuleName(virtualServiceName)
 		appPortProfileName := GetAppPortProfileName(dnatRuleName)
 		appPortProfileRef, err := gm.UpdateAppPortProfile(appPortProfileName, externalPort)
-		if err != nil {
+		if err == nil {
+			if appPortProfileRef != nil && appPortProfileRef.NsxtAppPortProfile != nil {
+				resourcesAllocated.Insert(VcdResourceAppPortProfile, &swaggerClient.EntityReference{
+					Name: appPortProfileName,
+					Id:   appPortProfileRef.NsxtAppPortProfile.ID,
+				})
+			}
+		} else if err == govcd.ErrorEntityNotFound {
+			klog.V(4).Infof("skipping update to app port profile [%s] as it is non existent", appPortProfileName)
+		} else {
 			return "", fmt.Errorf("unable to update application port profile [%s] with external port [%d]: [%v]", appPortProfileName, externalPort, err)
-		}
-		if appPortProfileRef != nil && appPortProfileRef.NsxtAppPortProfile != nil {
-			resourcesAllocated.Insert(VcdResourceAppPortProfile, &swaggerClient.EntityReference{
-				Name: appPortProfileName,
-				Id:   appPortProfileRef.NsxtAppPortProfile.ID,
-			})
 		}
 
 		// update DNAT rule
