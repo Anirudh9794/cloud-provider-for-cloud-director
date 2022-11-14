@@ -1,13 +1,11 @@
-{
-    "components": {
-        "cpi": {
-          "type": "object",
-          "description": "The CPI configuration of the cluster.",
-          "properties": {
-            "name": {
-              "type": "string"
-            }
-          }
+"components": {
+    "cpi": {
+      "type": "object",
+      "description": "The CPI configuration of the cluster.",
+      "properties": {
+        "name": {
+          "type": "string"
         }
+      }
     }
 }
