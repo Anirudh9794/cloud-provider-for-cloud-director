@@ -1,7 +1,11 @@
-"cpi": {
-  "properties": {
-    "name": {
-      "type": "string"
+{
+    "components": {
+        "cpi": {
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          }
+        }
     }
-  }
 }
